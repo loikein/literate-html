@@ -5,12 +5,15 @@
 - [`main`](#main)
 - [`header` and `footer`](#header-and-footer)
 - [Sectioning Elements](#sectioning-elements)
-    - [`nav`](#nav)
-    - [`article` vs `section` vs `div`](#article-vs-section-vs-div)
-    - [`aside`](#aside)
+	- [`nav`](#nav)
+	- [`article` vs `section` vs `div`](#article-vs-section-vs-div)
+	- [`aside`](#aside)
 - [Elemental Elements](#elemental-elements)
-    - [`p`](#p)
-    - [`small`](#small)
+	- [`em` vs `strong` vs `i`](#em-vs-strong-vs-i)
+	- [`s` vs `del`](#s-vs-del)
+	- [`small`](#small)
+	- [`code` and `pre`](#code-and-pre)
+	- [`time`](#time)
 
 <!-- /MarkdownTOC -->
 
@@ -29,7 +32,7 @@ There can only be 1 `<body>` tag in each document.
 
 ## `header` and `footer`
 
-- A `<header>` or a `<footer>` tag is a group.
+- A `<header>` or a `<footer>` tag is a group with no specific sementic implementations.
 - Each section can contain 1 direct child `<header>` and 1 direct child `<footer>`.
 
 ## [Sectioning Elements](https://html.spec.whatwg.org/multipage/dom.html#sectioning-content)
@@ -38,7 +41,8 @@ According to [4.3.11 Headings and sections - HTML Standard](https://html.spec.wh
 
 - Each sectioning element can have their own headings and outlines.
 - The first heading in a sectioning element is its heading.
-- Headings of equal or higher rank start a new section, headings of lower rank start a subsection.
+- Implicitly, headings of equal or higher rank start a new section, headings of lower rank start a subsection.
+- Explicitly, creating a child section starts a subsection (so you can [use `<h1>` in both the supersection and the subsection](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements)).
 
 ### `nav`
 
@@ -49,19 +53,17 @@ According to [4.3.11 Headings and sections - HTML Standard](https://html.spec.wh
 
 ```html
 <body>
-    <header>
-        <a href="./home">Logo</a>
-        <h1>A good blog</h1>
-        <nav>
-            <ul>
-                <li>Posts</li>
-                <li>Archive</li>
-                <li>About</li>
-            </ul>
-        </nav>
-    </header>
-    <main>…</main>
-    <footer>Copyleft 2020</footer>
+	<header>
+		<a href="./home">Logo</a>
+		<h1>A good blog</h1>
+		<nav><ul>
+			<li>Posts</li>
+			<li>Archive</li>
+			<li>About</li>
+		</ul></nav>
+	</header>
+	<main>…</main>
+	<footer>Copyleft 2020</footer>
 </body>
 ```
 
@@ -75,13 +77,23 @@ According to [4.3.3 The section element - HTML Standard](https://html.spec.whatw
 
 ```html
 <article>
-    <nav>…</nav>
-    <header>
-        <h1>…</h1>
-    </header>
-    <p>…</p>
-    <p>…</p>
+	<header>
+		<hgroup>
+			<h1>A good title</h1>
+			<h2><time datetime=2020-05-03>2020 May 03</time></h2>
+		</hgroup>
+		<nav><ul>
+			<li>Older post</li>
+			<li>Menu</li>
+			<li>Newer post</li>
+		</ul></nav>
+	</header>
+	<p>…</p>
+	<p>…</p>
+	<footer>Tags: atag, anothertag</footer>
 </article>
+
+<article>Comments</article>
 ```
 
 ### `aside`
@@ -92,14 +104,25 @@ According to [4.3.3 The section element - HTML Standard](https://html.spec.whatw
 
 Grouping elements + text-level elements
 
-### `p`
+### `em` vs `strong` vs `i`
+
+- `<em>` tags affect the meaning of a sentense by giving emphasis on different words.
+- To simply make words stand out (tones, voices, etc), you should use `<i>`.
+- To convey importance, you should use `<strong>`.
+
+### `s` vs `del`
+
+- `<s>` represents old contents that are no longer relevant.
+- To indicate document edits, you should use `<del>`.
 
 ### `small`
 
-[There is no clear standard](https://stackoverflow.com/questions/57272564/what-html-element-for-semantic-sidenotes), but you could [use `<small>` tag to contain sidenotes](https://www.kooslooijesteijn.net/blog/semantic-sidenotes).
+[There is no clear standard](https://stackoverflow.com/questions/57272564/what-html-element-for-semantic-sidenotes), but you could [use `<small>` tag to contain sidenotes](https://www.kooslooijesteijn.net/blog/semantic-sidenotes). (I personally prefer sidenote over footnote.)
 
-I personally prefer sidenote over footnote.
+### `code` and `pre`
 
+Use `<code>` for [inline code](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element), and `<pre><code>` for [code blocks](https://html.spec.whatwg.org/multipage/grouping-content.html#the-pre-element).
 
+### [`time`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element)
 
 
