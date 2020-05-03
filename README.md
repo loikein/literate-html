@@ -19,4 +19,4 @@ Work in progress.
 - CSS
 	- [Main style](./CSS-Main.md)
 	- [Normalize](./CSS-Normalize.md)
-- Example project
+- [Example project](./example-project/)

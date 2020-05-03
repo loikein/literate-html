@@ -7,9 +7,11 @@
 	- [Background](#background)
 	- [Font Size](#font-size)
 	- [Font Face](#font-face-1)
-	- [Stop Safari from Horizontal Scrolling](#stop-safari-from-horizontal-scrolling)
-- [`header` and `footer`](#header-and-footer)
+	- [Safari No Horizontal Scroll](#safari-no-horizontal-scroll)
+- [Top `header`](#top-header)
+	- [Gradient Accent Colour](#gradient-accent-colour)
 - [`main`](#main)
+- [Top `footer`](#top-footer)
 
 <!-- /MarkdownTOC -->
 
@@ -65,13 +67,15 @@ Also, [you probably want to put the background in `body` tag](https://css-tricks
 
 ```css
 html {
-	background: #222;
+	background: #F5F4F2;
 }
 ```
 
 ### Font Size
 
-[The `rem` method](https://snook.ca/archives/html_and_css/font-size-with-rem) is very cool. 
+You should not use `px` to set font sizes because it overwrites the browser settings that are very useful for people with non-perfect vision (such as me).
+
+Instead, [the `rem` method](https://snook.ca/archives/html_and_css/font-size-with-rem) is very cool:
 
 ```css
 html {
@@ -94,7 +98,9 @@ body {
 .bold { font-weight: 700; }
 ```
 
-### Stop Safari from Horizontal Scrolling
+### Safari No Horizontal Scroll
+
+Only necessary when there is something overflowing.
 
 ```css
 html, body {
@@ -105,7 +111,36 @@ html, body {
 }
 ```
 
-## `header` and `footer`
+## Top `header`
+
+### Gradient Accent Colour
+
+Credit: [css - Border Position - Stack Overflow](https://stackoverflow.com/a/33943462/10668706)
+
+```css
+/* all lines are necessary (why?) */
+/* set all 5px's to different values for thicker or thinner lines*/
+
+.fancy-header {
+	position: relative;
+	border-top: 5px solid transparent;
+}
+
+.fancy-header::before {
+	/* slightly larger than 90deg for more more natural look */
+	background: linear-gradient(120deg, rgba(0,121,218,1) 0%, rgba(228,125,125,1) 100%);
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	top: -5px;
+	left: 0;
+}
+```
+
 
 ## `main`
+
+
+## Top `footer`
 
