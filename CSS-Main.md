@@ -101,7 +101,6 @@ html, body {
 	/* these must be in both tags */
 	overflow-x: hidden;
 	height: 100%;
-	width: 100%;
 	transform: translate3d(0,0,0);
 }
 ```

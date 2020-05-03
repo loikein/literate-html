@@ -2,22 +2,52 @@
 
 <!-- MarkdownTOC -->
 
-- [`meta` tag](#meta-tag)
-    - [Must](#must)
-    - [Mobile Browser](#mobile-browser)
-    - [iOS Specific](#ios-specific)
-    - [Social Meta Tags](#social-meta-tags)
-- [`link` tag](#link-tag)
+- [`title`](#title)
+- [`base`](#base)
+- [`link`](#link)
     - [CSS](#css)
     - [Favicon](#favicon)
     - [Apple Touch Icon](#apple-touch-icon)
+- [`meta`](#meta)
+    - [`charset`](#charset)
+    - [Mobile Browser](#mobile-browser)
+    - [iOS Specific](#ios-specific)
+    - [Social Meta Tags](#social-meta-tags)
 
 <!-- /MarkdownTOC -->
 
+## `title`
 
-## `meta` tag
+## `base`
 
-### Must
+## `link`
+
+### CSS
+
+Avoid `<style>` tag if you can.
+
+```html
+<link rel="stylesheet" type="text/css" href="./modern-normalize.css">
+<link rel="stylesheet" type="text/css" href="./style.css">
+```
+
+### Favicon
+
+```html
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+```
+
+### [Apple Touch Icon](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
+
+If you want to provide different size image for each device, check sizes at [App Icon - Icons and Images - iOS - Human Interface Guidelines - Apple Developer](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/app-icon/).
+
+```html
+<link rel="apple-touch-icon" href="./touch-icon.png">
+```
+
+## `meta`
+
+### `charset`
 
 Set the character set of the page:
 
@@ -91,27 +121,4 @@ maximum dimensions: 4096x4096 -->
 
 <!-- Images must be less than 5MB in size. -->
 <meta name="twitter:image" content="http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg">
-```
-
-## `link` tag
-
-### CSS
-
-```html
-<link rel="stylesheet" type="text/css" href="./modern-normalize.css">
-<link rel="stylesheet" type="text/css" href="./style.css">
-```
-
-### Favicon
-
-```html
-<link rel="icon" type="image/x-icon" href="./favicon.ico">
-```
-
-### [Apple Touch Icon](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
-
-If you want to provide different size image for each device, check sizes at [App Icon - Icons and Images - iOS - Human Interface Guidelines - Apple Developer](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/app-icon/).
-
-```html
-<link rel="apple-touch-icon" href="./touch-icon.png">
 ```
