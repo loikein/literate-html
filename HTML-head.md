@@ -16,6 +16,8 @@
 
 <!-- /MarkdownTOC -->
 
+Main ref: [4 The elements of HTML - HTML Standard](https://html.spec.whatwg.org/multipage/semantics.html)
+
 ## `title`
 
 ## `base`

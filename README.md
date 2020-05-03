@@ -9,7 +9,7 @@ Work in progress.
 - HTML (according to [HTML Standard](https://html.spec.whatwg.org/multipage/semantics.html))
     - `html` tag
     - [`head` tag](./HTML-head.md)
-    - `body` tag
+    - [`body` tag](./HTML-body.md)
 - CSS
     - [Main style](./CSS-Main.md)
     - [Normalize](./CSS-Normalize.md)
