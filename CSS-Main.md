@@ -4,13 +4,14 @@
 
 - [`@font-face`](#font-face)
 - [`html` and `body`](#html-and-body)
-	- [Background](#background)
-	- [Font Size](#font-size)
-	- [Font Face](#font-face-1)
-	- [Vertical Scroll, Not Horizontal Scroll](#vertical-scroll-not-horizontal-scroll)
+    - [Background](#background)
+    - [Font Size](#font-size)
+    - [Font Face](#font-face-1)
+    - [Vertical Scroll, Not Horizontal Scroll](#vertical-scroll-not-horizontal-scroll)
 - [Top `header`](#top-header)
-	- [Gradient Accent Colour](#gradient-accent-colour)
+    - [Gradient Accent Colour](#gradient-accent-colour)
 - [`main`](#main)
+    - [`a` & `button`](#a--button)
 - [Top `footer`](#top-footer)
 
 <!-- /MarkdownTOC -->
@@ -151,6 +152,22 @@ Credit: [css - Border Position - Stack Overflow](https://stackoverflow.com/a/339
 
 ## `main`
 
+### `a` & `button`
+
+This article give great interactive examples for the different states: [When do the :hover, :focus, and :active pseudo-classes apply?](https://bitsofco.de/when-do-the-hover-focus-and-active-pseudo-classes-apply/)
+
+For buttons: [css - What is the difference between :focus and :active? - Stack Overflow](https://stackoverflow.com/questions/1677990/what-is-the-difference-between-focus-and-active)
+
+```css
+.link-fancy {
+    color: pink;
+}
+
+.link-fancy:hover,
+.link-fancy:focus {
+    color: blue;
+}
+```
 
 ## Top `footer`
 

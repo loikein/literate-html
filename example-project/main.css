@@ -57,9 +57,10 @@ body {
     font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;
     color: var(--black);
+    line-height: 1.5;
 }
 
-.header-top {
+.top-header {
     position: relative;
     text-align: center;
     border-bottom: 1px solid lightgray;
@@ -67,11 +68,11 @@ body {
     background: white;
 }
 
-.header-fancy {
+.top-header--fancy {
     border-top: 5px solid transparent;
 }
 
-.header-fancy::before {
+.top-header--fancy::before {
     background: linear-gradient(120deg, rgba(0,121,218,1) 0%, rgba(228,125,125,1) 100%);
     content: '';
     position: absolute;
@@ -81,7 +82,7 @@ body {
     left: 0;
 }
 
-.footer-top {
+.top-footer {
     text-align: center;
     padding: 1rem;
     background: white;
@@ -94,16 +95,20 @@ main {
     margin: auto;
 }
 
-.heading-underline {
-    padding-bottom: 0.5rem;
+.title{ ; }
+
+.title--underline {
     border-bottom: 1px solid lightgray;
 }
 
-.link-fancy {
+.link{ ; }
+
+.link--fancy {
     color: var(--link-color);
 }
 
-.link-fancy:hover {
+.link--fancy:hover,
+.link--fancy:focus {
     color: var(--link-color-sub);
 }
 
@@ -127,7 +132,10 @@ main pre,
 main blockquote {
     padding-right: 1em;
     page-break-inside: avoid;
+    line-height: 1.15;
 }
+
+/* not my fault... */
 
 .codehilite {background:white; color:#333333;}
 .codehilite .hll {background:#ffffcc;}
