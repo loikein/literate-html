@@ -7,7 +7,7 @@
 	- [Background](#background)
 	- [Font Size](#font-size)
 	- [Font Face](#font-face-1)
-	- [Safari No Horizontal Scroll](#safari-no-horizontal-scroll)
+	- [Vertical Scroll, Not Horizontal Scroll](#vertical-scroll-not-horizontal-scroll)
 - [Top `header`](#top-header)
 	- [Gradient Accent Colour](#gradient-accent-colour)
 - [`main`](#main)
@@ -91,23 +91,27 @@ h1   { font-size: 2.4rem; } /* =24px */
 ```css
 body {
 	font-family: 'Roboto', sans-serif;
-	font-display: swap;
 }
 
 .regular { font-weight: 300; }
 .bold { font-weight: 700; }
 ```
 
-### Safari No Horizontal Scroll
+### Vertical Scroll, Not Horizontal Scroll
 
-Only necessary when there is something overflowing.
+According to [html - why body overflow not working? - Stack Overflow](https://stackoverflow.com/questions/41506456/why-body-overflow-not-working), the best practice for `overflow` settings is to apply them to both `<html>` and `<body>`.
 
 ```css
 html, body {
-	/* these must be in both tags */
+	overflow-y: auto;
 	overflow-x: hidden;
+
+	/* Safari compatibility */
+	-webkit-overflow-scrolling: touch;
+
+	/* only necessary when there is something overflowing */
 	height: 100%;
-	transform: translate3d(0,0,0);
+	transform: translate(0, 0);
 }
 ```
 
@@ -118,23 +122,29 @@ html, body {
 Credit: [css - Border Position - Stack Overflow](https://stackoverflow.com/a/33943462/10668706)
 
 ```css
+.top-header {
+    position: relative;
+    text-align: center; /* if this, then left: 0; is necessary */
+    border-bottom: 1px solid lightgray;
+    padding: 1rem;
+    background: white;
+}
+
 /* all lines are necessary (why?) */
 /* set all 5px's to different values for thicker or thinner lines*/
 
 .fancy-header {
-	position: relative;
-	border-top: 5px solid transparent;
+    border-top: 5px solid transparent;
 }
 
 .fancy-header::before {
-	/* slightly larger than 90deg for more more natural look */
-	background: linear-gradient(120deg, rgba(0,121,218,1) 0%, rgba(228,125,125,1) 100%);
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 5px;
-	top: -5px;
-	left: 0;
+    background: linear-gradient(120deg, rgba(0,121,218,1) 0%, rgba(228,125,125,1) 100%);
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: -5px;
+    left: 0; /* can remove if no text-align */
 }
 ```
 
