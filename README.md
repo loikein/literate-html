@@ -18,6 +18,7 @@ Work in progress.
 		- `map` tag
 - CSS
 	- [Main style](./CSS-Main.md)
+		- Includes dark mode
 	- [Normalize](./CSS-Normalize.md)
 	- [Block Element Modifier](./CSS-BEM.md)
 - [Example project](./example-project/)
