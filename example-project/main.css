@@ -86,23 +86,20 @@ body {
 	left: 0;
 }
 
-/* theme switcher that does not work */
+/* theme switcher that only works partially */
 
-/*.theme-switcher {
+.theme-switcher {
+	color: var(--black);
 	position: absolute;
 	cursor: pointer;
 	user-select: none;
 	z-index: 2;
+	top: 1.4rem;
 }
 
-.theme-switcher__input {
-	display: none;
-}
+.theme-switcher__input{ display: none; }
 
-.theme-switcher__label {
-	top: 1rem;
-	right: 3rem;
-}
+.theme-switcher__label{ right: 3rem; }
 
 .theme-switcher__label:after {
 	position: absolute;
@@ -114,19 +111,11 @@ body {
 	content: "";
 }
 
-.theme-switcher__input:checked + .theme-switcher__label {
-	color: var(--white);
-}
-
-.theme-switcher__input:checked + .theme-switcher__label:after {
-	background: var(--white);
-}
-
-.theme-switcher__input:checked + html{
+.theme-switcher__input:checked ~ * {
 	--black: #F5F4F2;
 	--white: #222;
 	--whiter: #606060;
-}*/
+}
 
 .top-footer {
 	text-align: center;

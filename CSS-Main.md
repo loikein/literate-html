@@ -8,7 +8,8 @@
     - [Font Size](#font-size)
     - [Font Face](#font-face-1)
     - [Vertical Scroll, Not Horizontal Scroll](#vertical-scroll-not-horizontal-scroll)
-    - [Dark Mode](#dark-mode)
+    - [Automatic Dark Mode](#automatic-dark-mode)
+    - [User-Specified Dark Mode](#user-specified-dark-mode)
 - [Top `header`](#top-header)
     - [Gradient Accent Colour](#gradient-accent-colour)
 - [`main`](#main)
@@ -117,7 +118,7 @@ html, body {
 }
 ```
 
-### Dark Mode
+### Automatic Dark Mode
 
 If you use variable for all colours, this will be [really easy](https://css-tricks.com/dark-modes-with-css/), and it switches automatically.
 
@@ -139,9 +140,46 @@ html {
 }
 ```
 
-If you want the user to be able to control the theme, [that's also possible in theory](https://dev.to/oahehc/how-to-enable-dark-mode-on-your-website-with-pure-css-ake), although I have not succeeded on my machine.  
+### User-Specified Dark Mode
 
-<small class="side-note">The `+` selector only works for sibling elements.</small>
+If you want the user to be able to control the theme, [that's also possible in theory](https://dev.to/oahehc/how-to-enable-dark-mode-on-your-website-with-pure-css-ake), although it only works for some elements for the [example project](./example-project/).
+
+```html
+<input class="theme-switcher theme-switcher__input" id="switcher" type="checkbox" />
+<label class="theme-switcher theme-switcher__label" for="switcher">Dark</label>
+```
+
+```css
+.theme-switcher {
+    color: var(--black);
+    position: absolute;
+    cursor: pointer;
+    user-select: none;
+    z-index: 2;
+    top: 1.4rem;
+}
+
+.theme-switcher__input{ display: none; }
+
+.theme-switcher__label{ right: 3rem; }
+
+.theme-switcher__label:after {
+    position: absolute;
+    right: 4rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--black);
+    content: "";
+}
+
+.theme-switcher__input:checked ~ * {
+    --black: #F5F4F2;
+    --white: #222;
+    --whiter: #606060;
+}
+```
+
 
 ## Top `header`
 

@@ -11,6 +11,7 @@ Work in progress.
 	- [`head` tag](./HTML-head.md)
 	- [`body` tag](./HTML-body.md)
 	- [`form` & `input`](./HTML-form-input.md)
+		- [x] `button` tag
 	- Possible topics
 		- `img` & `svg` tag
 		- `table` tag
@@ -18,7 +19,8 @@ Work in progress.
 		- `map` tag
 - CSS
 	- [Main style](./CSS-Main.md)
-		- Includes dark mode
+		- [x] Dark mode
+		- [ ] Selectors
 	- [Normalize](./CSS-Normalize.md)
 	- [Block Element Modifier](./CSS-BEM.md)
 - [Example project](./example-project/)
