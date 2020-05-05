@@ -142,43 +142,9 @@ html {
 
 ### User-Specified Dark Mode
 
-If you want the user to be able to control the theme, [that's also possible in theory](https://dev.to/oahehc/how-to-enable-dark-mode-on-your-website-with-pure-css-ake), although it only works for some elements for the [example project](./example-project/).
+If you want the user to be able to control the theme, [that's also possible in theory](https://dev.to/oahehc/how-to-enable-dark-mode-on-your-website-with-pure-css-ake).
 
-```html
-<input class="theme-switcher theme-switcher__input" id="switcher" type="checkbox" />
-<label class="theme-switcher theme-switcher__label" for="switcher">Dark</label>
-```
-
-```css
-.theme-switcher {
-    color: var(--black);
-    position: absolute;
-    cursor: pointer;
-    user-select: none;
-    z-index: 2;
-    top: 1.4rem;
-}
-
-.theme-switcher__input{ display: none; }
-
-.theme-switcher__label{ right: 3rem; }
-
-.theme-switcher__label:after {
-    position: absolute;
-    right: 4rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background-color: var(--black);
-    content: "";
-}
-
-.theme-switcher__input:checked ~ * {
-    --black: #F5F4F2;
-    --white: #222;
-    --whiter: #606060;
-}
-```
+However, since there is no CSS selector for siblings elements, this will only work if you set styles using `*` (relatively slow & dangerous) or use a content wrapper (which is against [BEM rules](./CSS-BEM.md)).
 
 
 ## Top `header`

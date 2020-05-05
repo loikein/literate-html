@@ -101,7 +101,7 @@ body {
 
 .theme-switcher__label{ right: 3rem; }
 
-.theme-switcher__label:after {
+.theme-switcher__label::after {
 	position: absolute;
 	right: 4rem;
 	width: 2.5rem;

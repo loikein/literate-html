@@ -18,9 +18,9 @@ Work in progress.
 		- `iframe` tag
 		- `map` tag
 - CSS
-	- [Main style](./CSS-Main.md)
+	- [Selectors](./CSS-selector.md)
+	- [Main style](./CSS-main.md)
 		- [x] Dark mode
-		- [ ] Selectors
-	- [Normalize](./CSS-Normalize.md)
+	- [Normalize](./CSS-normalize.md)
 	- [Block Element Modifier](./CSS-BEM.md)
 - [Example project](./example-project/)
