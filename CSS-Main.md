@@ -207,3 +207,11 @@ For buttons: [css - What is the difference between :focus and :active? - Stack O
 
 ## Top `footer`
 
+```css
+.top-footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.7em;
+    color: gray;
+}
+```

@@ -10,10 +10,10 @@ Work in progress.
 	- `html` tag
 	- [`head` tag](./HTML-head.md)
 	- [`body` tag](./HTML-body.md)
+	- [`form` & `input`](./HTML-form-input.md)
 	- Possible topics
 		- `img` & `svg` tag
 		- `table` tag
-		- `form` & `input` tag
 		- `iframe` tag
 		- `map` tag
 - CSS
