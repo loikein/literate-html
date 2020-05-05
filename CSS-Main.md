@@ -39,21 +39,21 @@ Copy the link in browser and take a look at the contents. All we need is the `/*
 
 ```css
 @font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 300;
-	font-display: swap;
-	src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 ```
 
@@ -69,7 +69,7 @@ Also, [you probably want to put the background in `body` tag](https://css-tricks
 
 ```css
 html {
-	background: #F5F4F2;
+    background: #F5F4F2;
 }
 ```
 
@@ -81,7 +81,7 @@ Instead, [the `rem` method](https://snook.ca/archives/html_and_css/font-size-wit
 
 ```css
 html {
-	font-size:62.5%; /* make 1rem = 10px */
+    font-size:62.5%; /* make 1rem = 10px */
 }
 
 body { font-size: 1.4rem; } /* =14px */
@@ -92,7 +92,7 @@ h1   { font-size: 2.4rem; } /* =24px */
 
 ```css
 body {
-	font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .regular { font-weight: 300; }
@@ -105,15 +105,15 @@ According to [html - why body overflow not working? - Stack Overflow](https://st
 
 ```css
 html, body {
-	overflow-y: auto;
-	overflow-x: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-	/* Safari compatibility */
-	-webkit-overflow-scrolling: touch;
+    /* Safari compatibility */
+    -webkit-overflow-scrolling: touch;
 
-	/* only necessary when there is something overflowing */
-	height: 100%;
-	transform: translate(0, 0);
+    /* only necessary when there is something overflowing */
+    height: 100%;
+    transform: translate(0, 0);
 }
 ```
 
@@ -185,14 +185,23 @@ This article give great interactive examples for the different states: [When do 
 
 For buttons: [css - What is the difference between :focus and :active? - Stack Overflow](https://stackoverflow.com/questions/1677990/what-is-the-difference-between-focus-and-active)
 
+- `:hover` is the state hovered by a mouse.
+- `:focus` is the state focused by using `tab` or other input devices.
+
 ```css
-.link-fancy {
+.link{ ; }
+
+.link--fancy {
+    /* does not affect no-fancy links */
+    text-decoration: none;
     color: pink;
+    border-bottom: 1px solid pink;
 }
 
-.link-fancy:hover,
-.link-fancy:focus {
+.link--fancy:hover,
+.link--fancy:focus {
     color: blue;
+    border-bottom: 3px solid blue;
 }
 ```
 
