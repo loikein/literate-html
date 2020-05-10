@@ -34,6 +34,7 @@ There can only be 1 `<body>` tag in each document.
 
 - A `<header>` or a `<footer>` tag is a group with no specific sementic implementations.
 - Each section can contain 1 direct child `<header>` and 1 direct child `<footer>`.
+- For accessibility reasons, it is recommended that [each document only contains 1 `<header>` and 1 `<footer>`](https://dequeuniversity.com/rules/axe/3.5/landmark-unique?application=AxeFirefox).
 
 ## [Sectioning Elements](https://html.spec.whatwg.org/multipage/dom.html#sectioning-content)
 
@@ -48,7 +49,7 @@ According to [4.3.11 Headings and sections - HTML Standard](https://html.spec.wh
 
 - A `<nav>` tag contains links to other pages or to parts within the page.
 - A `<nav>` tag can be inside or outside a `<header>` tag, but [probably don't put `<header>` tags inside a `<nav>` tag](https://www.sitepoint.com/community/t/h1-inside-nav/35373/6) unless you want to explicitly name the `<nav>`.
-- There can be multiple `<nav>` tags in one document, but each section should only have 1 direct child `<nav>` tag.
+- For accessibility reasons, it is recommended that [each document only contains 1 `<nav>`](https://dequeuniversity.com/rules/axe/3.5/landmark-unique?application=AxeFirefox).
 - Personally, I like to put the top-level `<nav>` tag inside the top-level `<header>` tag.
 
 ```html

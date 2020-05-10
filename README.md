@@ -7,6 +7,7 @@ Work in progress.
 ## TOC
 
 - HTML (according to [HTML Standard](https://html.spec.whatwg.org/multipage/semantics.html))
+	- [Accessibility](./HTML-accessibility.md)
 	- `html` tag
 	- [`head` tag](./HTML-head.md)
 	- [`body` tag](./HTML-body.md)

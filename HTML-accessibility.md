@@ -2,24 +2,36 @@
 
 <!-- MarkdownTOC -->
 
+- [Semantic HTML](#semantic-html)
 - [`lang`](#lang)
-- [`alt` & `title` for `img`](#alt--title-for-img)
+- [Meaningful Tab Order](#meaningful-tab-order)
+- [Skip Navigation](#skip-navigation)
+- [`img`](#img)
 - [`a`](#a)
     - [`target` vs `rel`](#target-vs-rel)
     - [`title`](#title)
-- [`caption` & `scope` for `table`](#caption--scope-for-table)
+- [`table`: `caption` & `scope`](#table-caption--scope)
+- [`form`](#form)
 - [`accesskey`](#accesskey)
+- [Accessibility Statement](#accessibility-statement)
 
 <!-- /MarkdownTOC -->
 
 Main refs:
 
 - [Dive Into Accessibility](https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/) ([中文翻译](http://dia.z6i.org/)), refreshed according to HTML5.
-- [HTML: A good basis for accessibility - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML)([中文版本](https://developer.mozilla.org/zh-CN/docs/learn/Accessibility/HTML:%E4%B8%BA%E5%8F%AF%E8%AE%BF%E9%97%AE%E6%80%A7%E6%8F%90%E4%BE%9B%E4%B8%80%E4%B8%AA%E8%89%AF%E5%A5%BD%E7%9A%84%E5%9F%BA%E7%A1%80))
+- [Front-end development | Accessibility for Teams](https://accessibility.digital.gov/front-end/getting-started/)
+- [HTML: A good basis for accessibility - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML) ([中文版本](https://developer.mozilla.org/zh-CN/docs/learn/Accessibility/HTML:%E4%B8%BA%E5%8F%AF%E8%AE%BF%E9%97%AE%E6%80%A7%E6%8F%90%E4%BE%9B%E4%B8%80%E4%B8%AA%E8%89%AF%E5%A5%BD%E7%9A%84%E5%9F%BA%E7%A1%80))
+- [How to Meet WCAG (Quickref Reference)](https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#meaningful-sequence)
+- [How I do an accessibility check -- A11ycasts #11 - YouTube](https://www.youtube.com/watch?v=cOmehxAU_4s&feature=youtu.be)
+
+## Semantic HTML
+
+…is the principle.
 
 ## `lang`
 
-You should specify the language of your webpage, as well as every element that is using other languages.
+You should specify the language of every document, as well as every element that is using different languages. This helps screen reader users, as well as those who need translation to read your document.
 
 For example:
 
@@ -31,23 +43,44 @@ For example:
     </blockquote>
 ```
 
-## `alt` & `title` for `img`
+## Meaningful Tab Order
 
-Every `<img>` should have `alt`.
+- [Tab order | UX design | Accessibility for Teams](https://accessibility.digital.gov/ux/tab-order/)
+- [H4: Creating a logical tab order through links, form controls, and objects](https://www.w3.org/WAI/WCAG21/Techniques/html/H4.html)
+
+## Skip Navigation
+
+Ref: [2.4.1 Bypass Blocks - Guideline 2.4 Navigable - How to Meet WCAG (Quickref Reference)](https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#bypass-blocks)
+
+- Every document should include a [skip navigation button](https://webaim.org/techniques/skipnav/)
+
+
+## `img`
+
+Every `<img>` should have an `alt`, and [you should not use title](https://developer.paciellogroup.com/blog/2013/01/using-the-html-title-attribute-updated/).
 
 ```html
 <img src="smiley.jpeg" alt="a smiley face">
 ```
 
-`title` is for extra information, and can be seen when users hover their mouse over the image.
+If some image is there solely for aesthetic reasons, it should have an empty alt.
 
+```html
+<img src="fancy-hr.png" alt="">
+```
+
+<!-- 
 ```html
 <img src="smiley.jpeg" alt="a smiley face" title="Smiley face of John Smith">
 ```
+ -->
 
 ## `a`
 
 ### `target` vs `rel`
+
+- Do not use `target="_blank"`
+- Always use `rel="noopener noreferrer"`
 
 ### `title`
 
@@ -72,7 +105,7 @@ Let us talk about
 ```
 
 
-## `caption` & `scope` for `table`
+## `table`: `caption` & `scope`
 
 Every `<table>` should have a `<caption>` that specifies the contents.
 
@@ -97,7 +130,11 @@ Every `<table>` should have a `<caption>` that specifies the contents.
 </table>
 ```
 
+## `form`
 
+WIP
+
+Ref: [Forms | UX design | Accessibility for Teams](https://accessibility.digital.gov/ux/forms/)
 
 ## `accesskey`
 
@@ -124,7 +161,10 @@ So you should have at least:
    accesskey="1">Home</a>
 <a href="accessibility_statement.html" 
    accesskey="0">Accessibility Statement</a>
-
 ```
 
+## Accessibility Statement
 
+You have come so far. Write that damn statement to let users know they can do it.
+
+Example: (to be added)

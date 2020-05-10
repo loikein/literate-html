@@ -180,6 +180,9 @@ Credit: [css - Border Position - Stack Overflow](https://stackoverflow.com/a/339
 }
 ```
 
+<!-- 
+background: var(--theme-ui-colors-newsletter-background,#ffffff) repeating-linear-gradient( 135deg,var(--theme-ui-colors-newsletter-stripeColorA,#ff5a54),var(--theme-ui-colors-newsletter-stripeColorA,#ff5a54) 20px,transparent 20px,transparent 40px,var(--theme-ui-colors-newsletter-stripeColorB,#3fa9f5) 40px,var(--theme-ui-colors-newsletter-stripeColorB,#3fa9f5) 60px,transparent 60px,transparent 80px );
+ -->
 
 ## `main`
 
