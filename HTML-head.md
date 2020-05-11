@@ -1,4 +1,4 @@
-# `head` tag
+# HTML: `head` tag
 
 <!-- MarkdownTOC -->
 

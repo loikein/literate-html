@@ -2,7 +2,11 @@
 
 <!-- MarkdownTOC -->
 
-- [`:focus`](#focus)
+- [`a`](#a)
+    - [`:hover`](#hover)
+    - [`:visited`](#visited)
+    - [`:focus`](#focus)
+- [Hidden Accessibility Links](#hidden-accessibility-links)
 
 <!-- /MarkdownTOC -->
 
@@ -13,23 +17,86 @@ Main refs:
 - [CSS and JavaScript accessibility best practices - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/CSS_and_JavaScript) ([中文翻译](https://developer.mozilla.org/zh-CN/docs/learn/Accessibility/CSS%E5%92%8CJavaScript))
 - [WebAIM: Accessible CSS](https://webaim.org/techniques/css/)
 - [Visual design | Accessibility for Teams](https://accessibility.digital.gov/visual-design/getting-started/)
+- [Styling form controls with CSS, revisited | 456 Berea Street](https://www.456bereastreet.com/archive/200701/styling_form_controls_with_css_revisited/)
 
-## `:focus`
+## `a`
+
+The principle is that least 1 more style in addition to colour should be there.  
+(E.g., the link style of GitHub markdown is bad.)
+
+Good example: 
+
+```css
+.link--fancy {
+    text-decoration: none;
+    color: blue;
+    border-bottom: 1px solid var(--theme-color-1);
+}
+```
+
+### `:hover`
+
+
+
+### `:visited`
+
+I argue for the case that <u>style for `:visited` should be positioned after `:focus`</u>, since those who need the reminding function of `:visited` will still need it when the link is `:focus`-ed.  
+
+
+### `:focus`
 
 Refs: 
 
-- [Styling form controls with CSS, revisited | 456 Berea Street](https://www.456bereastreet.com/archive/200701/styling_form_controls_with_css_revisited/)
 - [C15: Using CSS to change the presentation of a user interface component when it receives focus](https://www.w3.org/WAI/WCAG21/Techniques/css/C15)
 
-active & visited?
-
-- When necessary, consider [using JavaScript](https://www.w3.org/WAI/WCAG21/Techniques/client-side-script/SCR31.html).
+- When necessary, consider [using JavaScript](https://www.w3.org/WAI/WCAG21/Techniques/client-side-script/SCR31.html) to make things `focus`-able.
 
 ```css
 /* source: https://inclusivedesignprinciples.org */
+
 :focus:not([tabindex="-1"]) {
-  outline: 0.125rem solid #fcb316;
-  outline-offset: 0.125rem;
+  outline: 3px solid orange;
+  outline-offset: 3px;
   border: 0;
 }
 ```
+
+## Hidden Accessibility Links
+
+Here's an example that I adapted from what Google does:
+
+```html
+<body>
+<section class="a11y-links">
+    <a class="a11y-links__link" tabindex="0" href="#article-title">Skip to main content</a>
+    <a class="a11y-links__link" tabindex="0" href="#accessibility-statement">Accessibility statement</a>
+</section>
+…
+```
+
+```css
+.a11y-links {
+    align-items: center;
+    background-color:  var(--white);
+    box-shadow:0 0px 1.3px rgba(0, 0, 0, 0.184),
+                0 0px 5.1px rgba(0, 0, 0, 0.198),
+                0 0px 20px rgba(0, 0, 0, 0.2);
+    margin: 10rem auto 0 0;
+    position: absolute;
+    z-index: 1000;
+}
+
+.a11y-links__link:not(:focus) {
+    clip: rect(1px,1px,1px,1px);
+    position: absolute;
+    padding: 0;
+}
+
+.a11y-links__link {
+    /* style when focused */
+    cursor: pointer;
+    display: inline-block;
+    margin: 1em;
+}
+```
+

@@ -1,17 +1,17 @@
-# Accessibility
+# HTML: Accessibility
 
 <!-- MarkdownTOC -->
 
 - [Semantic HTML](#semantic-html)
 - [`lang`](#lang)
 - [Meaningful Tab Order](#meaningful-tab-order)
-- [Skip Navigation](#skip-navigation)
 - [`img`](#img)
 - [`a`](#a)
     - [`target` vs `rel`](#target-vs-rel)
     - [`title`](#title)
 - [`table`: `caption` & `scope`](#table-caption--scope)
 - [`form`](#form)
+- [Skip Navigation & Other Accessibility Links](#skip-navigation--other-accessibility-links)
 - [`accesskey`](#accesskey)
 - [Accessibility Statement](#accessibility-statement)
 
@@ -46,19 +46,13 @@ For example:
 
 ## Meaningful Tab Order
 
-- [Tab order | UX design | Accessibility for Teams](https://accessibility.digital.gov/ux/tab-order/)
-- [H4: Creating a logical tab order through links, form controls, and objects](https://www.w3.org/WAI/WCAG21/Techniques/html/H4.html)
-
-## Skip Navigation
-
-Ref: [2.4.1 Bypass Blocks - Guideline 2.4 Navigable - How to Meet WCAG (Quickref Reference)](https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#bypass-blocks)
-
-- Every document should include a [skip navigation button](https://webaim.org/techniques/skipnav/)
-
+- Usually this can be achieved by write the `html` document [in a similar order as how it should be presented](https://www.w3.org/WAI/WCAG21/Techniques/general/G59).
+- You should [not set positive `tabindex`](https://developer.paciellogroup.com/blog/2014/08/using-the-tabindex-attribute/) unless 100% sure, and never do so if you are building some [components that would be used by others](https://adrianroselli.com/2014/11/dont-use-tabindex-greater-than-0.html).
+- It is a good idea to assign a group of elements the same `tabindex`, [as in the Example 3 here](https://www.w3.org/WAI/WCAG21/Techniques/html/H4.html). Combined with point 2, this means most of the time you would be writing `tabindex="0"`.
 
 ## `img`
 
-Every `<img>` should have an `alt`, and [you should not use title](https://developer.paciellogroup.com/blog/2013/01/using-the-html-title-attribute-updated/).
+Every `<img>` should have an `alt`, and [no title](https://developer.paciellogroup.com/blog/2013/01/using-the-html-title-attribute-updated/).
 
 ```html
 <img src="smiley.jpeg" alt="a smiley face">
@@ -81,7 +75,7 @@ If some image is there solely for aesthetic reasons, it should have an empty alt
 ### `target` vs `rel`
 
 - Do not use `target="_blank"`
-- Always use `rel="noopener noreferrer"`
+- Do use `rel="noopener noreferrer"`
 
 ### `title`
 
@@ -140,6 +134,14 @@ Ref:
 - [Forms | UX design | Accessibility for Teams](https://accessibility.digital.gov/ux/forms/)
 - [Forms | Visual design | Accessibility for Teams](https://accessibility.digital.gov/visual-design/forms/)
 
+## Skip Navigation & Other Accessibility Links
+
+Ref: [2.4.1 Bypass Blocks - Guideline 2.4 Navigable - How to Meet WCAG (Quickref Reference)](https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#bypass-blocks)
+
+- Every document should include a [skip navigation button](https://webaim.org/techniques/skipnav/).
+- You can hide the accessibility links using CSS. See [CSS Accessibility](./CSS-accessibility.md#hidden-accessibility-links).
+
+
 ## `accesskey`
 
 There is no [universal standards](https://www.standardaccesskeys.com/SAK2014/#spec), but you probably want to [point `accesskey`'s to the number keys](https://www.sitepoint.com/community/t/access-keys-is-there-a-standard/51430).
@@ -158,7 +160,7 @@ There is no [universal standards](https://www.standardaccesskeys.com/SAK2014/#sp
 > * 9 - Feedback form
 > * 0 - Access key details
 
-So you should have at least:
+So you should at least have:
 
 ```html
 <a href="index.html" 

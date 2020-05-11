@@ -1,4 +1,4 @@
-# `body` tag
+# HTML: `body` tag
 
 <!-- MarkdownTOC -->
 

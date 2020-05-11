@@ -142,9 +142,7 @@ html {
 
 ### User-Specified Dark Mode
 
-If you want the user to be able to control the theme, [that's also possible in theory](https://dev.to/oahehc/how-to-enable-dark-mode-on-your-website-with-pure-css-ake).
-
-However, since there is no CSS selector for siblings elements, this will only work if you set styles using `*` (relatively slow & dangerous) or use a content wrapper (which is against [BEM rules](./CSS-BEM.md)).
+If you want the user to be able to control the theme, [that's also possible in theory](https://dev.to/oahehc/how-to-enable-dark-mode-on-your-website-with-pure-css-ake). However, I have not succeeded.
 
 
 ## Top `header`
