@@ -20,6 +20,7 @@
 Main refs:
 
 - [Dive Into Accessibility](https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/) ([中文翻译](http://dia.z6i.org/)), refreshed according to HTML5.
+- [Home | 18F Accessibility Guide](https://accessibility.18f.gov/)
 - [Front-end development | Accessibility for Teams](https://accessibility.digital.gov/front-end/getting-started/)
 - [HTML: A good basis for accessibility - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML) ([中文版本](https://developer.mozilla.org/zh-CN/docs/learn/Accessibility/HTML:%E4%B8%BA%E5%8F%AF%E8%AE%BF%E9%97%AE%E6%80%A7%E6%8F%90%E4%BE%9B%E4%B8%80%E4%B8%AA%E8%89%AF%E5%A5%BD%E7%9A%84%E5%9F%BA%E7%A1%80))
 - [How to Meet WCAG (Quickref Reference)](https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0#meaningful-sequence)
@@ -134,7 +135,10 @@ Every `<table>` should have a `<caption>` that specifies the contents.
 
 WIP
 
-Ref: [Forms | UX design | Accessibility for Teams](https://accessibility.digital.gov/ux/forms/)
+Ref: 
+
+- [Forms | UX design | Accessibility for Teams](https://accessibility.digital.gov/ux/forms/)
+- [Forms | Visual design | Accessibility for Teams](https://accessibility.digital.gov/visual-design/forms/)
 
 ## `accesskey`
 

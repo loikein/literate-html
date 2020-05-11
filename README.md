@@ -20,6 +20,7 @@ Work in progress.
 		- `map` tag
 - CSS
 	- [Selectors](./CSS-selector.md)
+	- [Accessibility](./CSS-accessibility.md)
 	- [Main style](./CSS-main.md)
 		- [x] Dark mode
 	- [Normalize](./CSS-normalize.md)
