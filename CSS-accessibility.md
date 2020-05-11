@@ -2,10 +2,10 @@
 
 <!-- MarkdownTOC -->
 
+- [`:focus`](#focus)
 - [`a`](#a)
     - [`:hover`](#hover)
     - [`:visited`](#visited)
-    - [`:focus`](#focus)
 - [Hidden Accessibility Links](#hidden-accessibility-links)
 
 <!-- /MarkdownTOC -->
@@ -19,9 +19,24 @@ Main refs:
 - [Visual design | Accessibility for Teams](https://accessibility.digital.gov/visual-design/getting-started/)
 - [Styling form controls with CSS, revisited | 456 Berea Street](https://www.456bereastreet.com/archive/200701/styling_form_controls_with_css_revisited/)
 
+## `:focus`
+
+- `:focus` is [not only for links](https://www.w3.org/WAI/WCAG21/Techniques/css/C15).
+- When necessary, consider [using JavaScript](https://www.w3.org/WAI/WCAG21/Techniques/client-side-script/SCR31.html) to make things `focus`-able.
+
+Here's an example that I adapted from [Inclusive Design Principles](https://inclusivedesignprinciples.org/). Put it below styles for `html` and `body`, above everything else.
+
+```css
+:focus:not([tabindex="-1"]) {
+  outline: 3px solid orange;
+  outline-offset: 3px;
+  border: 0;
+}
+```
+
 ## `a`
 
-The principle is that least 1 more style in addition to colour should be there.  
+Add at least 1 more style in addition to colour should be there.  
 (E.g., the link style of GitHub markdown is bad.)
 
 Good example: 
@@ -43,23 +58,7 @@ Good example:
 I argue for the case that <u>style for `:visited` should be positioned after `:focus`</u>, since those who need the reminding function of `:visited` will still need it when the link is `:focus`-ed.  
 
 
-### `:focus`
 
-Refs: 
-
-- [C15: Using CSS to change the presentation of a user interface component when it receives focus](https://www.w3.org/WAI/WCAG21/Techniques/css/C15)
-
-- When necessary, consider [using JavaScript](https://www.w3.org/WAI/WCAG21/Techniques/client-side-script/SCR31.html) to make things `focus`-able.
-
-```css
-/* source: https://inclusivedesignprinciples.org */
-
-:focus:not([tabindex="-1"]) {
-  outline: 3px solid orange;
-  outline-offset: 3px;
-  border: 0;
-}
-```
 
 ## Hidden Accessibility Links
 

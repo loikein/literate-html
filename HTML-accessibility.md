@@ -14,6 +14,13 @@
 - [Skip Navigation & Other Accessibility Links](#skip-navigation--other-accessibility-links)
 - [`accesskey`](#accesskey)
 - [Accessibility Statement](#accessibility-statement)
+- [Example Accessibility Statement](#example-accessibility-statement)
+    - [Standards Compliance](#standards-compliance)
+    - [Navigation Aids](#navigation-aids)
+    - [Links](#links)
+    - [Images](#images)
+    - [Visual Design](#visual-design)
+    - [Accessibility References](#accessibility-references)
 
 <!-- /MarkdownTOC -->
 
@@ -144,7 +151,9 @@ Ref: [2.4.1 Bypass Blocks - Guideline 2.4 Navigable - How to Meet WCAG (Quickref
 
 ## `accesskey`
 
-There is no [universal standards](https://www.standardaccesskeys.com/SAK2014/#spec), but you probably want to [point `accesskey`'s to the number keys](https://www.sitepoint.com/community/t/access-keys-is-there-a-standard/51430).
+The use of `accesskey` is [depreciated due to lack of support](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey). Consider [accessibility links](#skip-navigation-other-accessibility-links) instead.
+
+<!-- There is no [universal standards](https://www.standardaccesskeys.com/SAK2014/#spec), but you probably want to [point `accesskey`'s to the number keys](https://www.sitepoint.com/community/t/access-keys-is-there-a-standard/51430).
 
 > UK Government recommendation for access keys:
 > 
@@ -168,9 +177,62 @@ So you should at least have:
 <a href="accessibility_statement.html" 
    accesskey="0">Accessibility Statement</a>
 ```
-
+ -->
 ## Accessibility Statement
 
 You have come so far. Write that damn statement to let users know they can do it.
 
-Example: (to be added)
+An example that I adapted from [Dive Into Accessibility](https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/):
+
+<hr>
+
+## Example Accessibility Statement
+
+This is the official accessibility statement for [Example Project of Literate <abbr title="HyperText Markup Language">HTML</abbr>](https://github.com/loikein/literate-html/tree/master/example-project).
+
+If you have any questions or comments, feel free to email me at [feedback@example.com](mailto:feedback@example.com).
+
+
+### Standards Compliance
+
+All pages on this site are <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> [AA](https://www.w3.org/WAI/WCAG2AA-Conformance) approved, 
+complying with [WCAG 2.0 Checklist](https://www.w3.org/TR/2005/WD-WCAG20-20051123/appendixB.html).  
+This is a judgement call; many accessibility features can be measured, but many can not.  
+I have reviewed all the guidelines and believe that all these pages are in compliance.
+
+
+All pages on this site [validate as valid current HTML document](https://validator.w3.org/).  
+This is not a judgement call. A program can determine with 100% accuracy whether a page is valid HTML. For example, you can [check the home page for HTML validity yourself](https://validator.w3.org/nu/?doc=https%3A%2F%2Fhtmlpreview.github.io%2F%3Fhttps%3A%2F%2Fgithub.com%2Floikein%2Fliterate-html%2Fblob%2Fmaster%2Fexample-project%2Findex.html).
+
+All pages on this site use structured semantic markup.  
+
+### Navigation Aids
+
+All pages on this site start with a skip to main contents link, and a link that points to this page.  
+They can be reached using <kbd>tab</kbd> key or other focus methods.
+
+All pages on this site also contains a [search box](#search) where you can search across the whole site.
+
+The articles are cross-referenced in several ways. You can browse the articles by [tag](#tag), [date](#archive) or [projects they belong to](#projects).
+
+### Links
+
+- Links have title attributes which describe the link in greater detail, unless the text of the link already fully describes the target (such as the headline of an article).
+- Links are written to make sense out of context.
+
+### Images
+
+- All content images used in this site include descriptive `alt` attributes.
+- Purely decorative graphics include null `alt` attributes.
+- Complex images include inline descriptions to explain the significance of each image.
+
+### Visual Design
+
+- This site uses only relative font sizes, compatible with the user-specified "text size" option in visual browsers.
+- If your browser or browsing device does not support stylesheets at all, the content of each page is still readable.
+
+### Accessibility References
+
+- [Web Content Accessibility Guidelines (WCAG) Overview](https://www.w3.org/WAI/standards-guidelines/wcag/)
+- [WebAIM: Web Content Accessibility Guidelines](https://webaim.org/standards/wcag/)
+- [18F Accessibility Guide](https://accessibility.18f.gov/)

@@ -44,6 +44,7 @@ html {
 	--theme-color-1: #CF3643;
 	--theme-color-2: #1C73BE;
 	--theme-color-3: #7C2ECB;
+	--highlight: #FEF6B1;
 }
 
 html {
@@ -108,13 +109,12 @@ body {
 	background: white;
 	border-top: 5px solid transparent;
 	/* border-bottom: 3px solid var(--light-grey); */
-	box-shadow:
-  0 0px 1px rgba(0, 0, 0, 0.02),
-  0 0px 3.5px rgba(0, 0, 0, 0.028),
-  0 0px 7.1px rgba(0, 0, 0, 0.035),
-  0 0px 11.5px rgba(0, 0, 0, 0.042),
-  0 0px 16.3px rgba(0, 0, 0, 0.05),
-  0 0px 20px rgba(0, 0, 0, 0.07)
+	box-shadow:0 0px 1px rgba(0, 0, 0, 0.02),
+				0 0px 3.5px rgba(0, 0, 0, 0.028),
+				0 0px 7.1px rgba(0, 0, 0, 0.035),
+				0 0px 11.5px rgba(0, 0, 0, 0.042),
+				0 0px 16.3px rgba(0, 0, 0, 0.05),
+				0 0px 20px rgba(0, 0, 0, 0.07)
 ;
 }
 
@@ -167,14 +167,29 @@ main {
 	border-bottom: 3px solid var(--theme-color-3);
 }
 
+.abbr[title] {
+	cursor: help;
+	background: var(--highlight);
+}
+
+.abbr--fancy[title] {
+	text-decoration: none;
+	border-bottom: 2px dotted;
+}
+
 /* code highlight */
 main code,
 main kbd,
 main pre,
 main samp {
 	font-family: 'Inconsolata', monospace;
-	font-size: 1.1em;
 	background: var(--light-grey);
+}
+
+main code {
+	/* mono fonts have smaller x-height */
+	font-size: 1.15em;
+	line-height: 1em;
 }
 
 main pre {
@@ -197,6 +212,12 @@ main blockquote {
 		--black: #FFFFFF;
 		--white: #222222;
 		--lite-grey: #111111;
+	}
+}
+
+@media print{
+	abbr:after {
+		content: " (" attr(title) ")";
 	}
 }
 
