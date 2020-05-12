@@ -10,6 +10,7 @@
 
 <!-- /MarkdownTOC -->
 
+WIP
 
 Main refs:
 
@@ -36,29 +37,46 @@ Here's an example that I adapted from [Inclusive Design Principles](https://incl
 
 ## `a`
 
-Add at least 1 more style in addition to colour should be there.  
-(E.g., the link style of GitHub markdown is bad.)
+- Add at least 2 styles to differentiate from normal words (underline, colour, background, prompt emoji…).
+- Before you ask, the link style of GitHub markdown is bad.
 
-Good example: 
+Example: 
 
 ```css
 .link--fancy {
     text-decoration: none;
-    color: blue;
-    border-bottom: 1px solid var(--theme-color-1);
+    color: pink;
+    border-bottom: 1px solid pink;
 }
 ```
 
 ### `:hover`
 
+- Change at least 2 styles to clearly indicate a link is hovered.
 
+Example: 
+
+```css
+.link--fancy:hover,
+.link--fancy:focus {
+    color: blue;
+    border-bottom: 3px solid blue;
+}
+```
 
 ### `:visited`
 
-I argue for the case that <u>style for `:visited` should be positioned after `:focus`</u>, since those who need the reminding function of `:visited` will still need it when the link is `:focus`-ed.  
+The amount of sites that include `:visited` style is decreasing. However, if you do style it, 
+I argue for the case that style for `:visited` should be positioned **after** `:focus`, since those who need the reminding function of `:visited` will still need it when the link is `:focus`-ed.
 
+Example:
 
-
+```css
+.link--fancy:visited {
+    color: purple;
+    border-bottom: 3px solid purple;
+}
+```
 
 ## Hidden Accessibility Links
 
