@@ -7,11 +7,9 @@
 	- [`button` Tag](#button-tag)
 	- [Checkbox](#checkbox)
 	- [Radio & `fieldset` \(`id`, `name`, `value` & `label`\)](#radio--fieldset-id-name-value--label)
-- [`label` Tag](#label-tag)
+- [`label`](#label)
 	- [Linking `label` & `input`](#linking-label--input)
 - [`form` Tag](#form-tag)
-- [Weird Usages of `input`](#weird-usages-of-input)
-	- [Click to Show Menu](#click-to-show-menu)
 
 <!-- /MarkdownTOC -->
 
@@ -104,10 +102,11 @@ This is a `<fieldset>` with `<legend>`:
 </fieldset>
 ```
 
-## `label` Tag
+## `label`
 
 - When a `<label>` is paird with an `<input>`, clicking the `<label>` also clicks the `<input>`.
 	- Use `user-select: none;` to prevent accidental selection.
+	- Use `cursor: pointer;` to indicate that the label is clickable.
 
 ### Linking `label` & `input`
 
@@ -131,163 +130,4 @@ Implicit link: <label>Yes or no?<input type="checkbox" name="check"></label>
 
 ## `form` Tag
 
-
-## Weird Usages of `input`
-
-### Click to Show Menu
-
-This is a `checkbox` menu:
-
-<style>
-.accordion-box {
-	padding-left:0 !important;
-}
-.accordion {
-	width: 100%;
-	overflow: hidden;
-	user-select: none;
-}
-.accordion-label {
-	display: flex;
-	justify-content: space-between;
-	padding-right: 1em;
-	cursor: pointer;
-}
-.accordion-label:hover,
-.accordion-label:focus {
-	background-color: lightgray;
-}
-.accordion-label::after {
-	content: "\276F";
-}
-.accordion-content {
-	max-height: 0;
-	padding-right: 1em;
-}
-.accordion-box input {
-	display: none;
-}
-.accordion-box input:checked ~ .accordion-label::after {
-	-webkit-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
-.accordion-box input:checked ~ .accordion-content {
-	max-height: 90vh;
-}
-</style>
-
-<ul class="accordion-box">
-	<li class="accordion">
-	<input id="to-do" type="checkbox" name="to-do-list" />
-	<label class="accordion-label" for="to-do">To-do list</label>
-	<ul class="accordion-content">
-		<li>Going to-do</li>
-		<li><strike>Finished to-do</strike></li>
-		<li><strike>Finished to-do</strike></li>
-	</ul>
-	</li>
-	<li class="accordion">
-	<input id="to-do-2" type="checkbox" name="to-do-list" />
-	<label class="accordion-label" for="to-do-2">To-do list 2</label>
-	<ul class="accordion-content">
-		<li>Going to-do</li>
-		<li>Going to-do</li>
-		<li><strike>Finished to-do</strike></li>
-	</ul>
-	</li>
-</ul>
-
-This is a `radio` menu with same `name`:
-
-<ul class="accordion-box">
-	<li class="accordion">
-	<input id="to-do-3" type="radio" name="to-do-3" checked />
-	<label class="accordion-label" for="to-do-3">To-do list</label>
-	<ul class="accordion-content">
-		<li>Going to-do</li>
-		<li><strike>Finished to-do</strike></li>
-		<li><strike>Finished to-do</strike></li>
-	</ul>
-	</li>
-	<li class="accordion">
-	<input id="to-do-4" type="radio" name="to-do-3" />
-	<label class="accordion-label" for="to-do-4">To-do list 2</label>
-	<ul class="accordion-content">
-		<li>Going to-do</li>
-		<li>Going to-do</li>
-		<li><strike>Finished to-do</strike></li>
-	</ul>
-	</li>
-</ul>
-
-
-```html
-<ul class="accordion-box">
-	<li class="accordion">
-	<input id="to-do" type="checkbox" name="to-do-list" />
-	<label class="accordion-label" for="to-do">To-do list</label>
-	<ul class="accordion-content">
-		<li>Going to-do</li>
-		<li><strike>Finished to-do</strike></li>
-		<li><strike>Finished to-do</strike></li>
-	</ul>
-	</li>
-	<li class="accordion">
-	<input id="to-do-2" type="checkbox" name="to-do-list" />
-	<label class="accordion-label" for="to-do-2">To-do list 2</label>
-	<ul class="accordion-content">
-		<li>Going to-do</li>
-		<li>Going to-do</li>
-		<li><strike>Finished to-do</strike></li>
-	</ul>
-	</li>
-</ul>
-```
-
-\-
-
-```css
-/* Accordion styles */
-.accordion-box {
-	/* ignore the ul style */
-	padding-left: 0 !important;
-}
-.accordion {
-	width: 100%;
-	overflow: hidden;
-	user-select: none;
-}
-.accordion-label {
-	/* right-align the arrow */
-	display: flex;
-	justify-content: space-between;
-
-	/* add some padding to avoid clip */
-	padding-right: 1em;
-	cursor: pointer;
-}
-.accordion-label:hover,
-.accordion-label:focus {
-	background-color: lightgray;
-}
-.accordion-label::after {
-	/* the arrow */
-	content: "\276F";
-}
-.accordion-content {
-	max-height: 0;
-	padding-right: 1em;
-}
-.accordion-box input {
-	display: none;
-}
-.accordion-box input:checked ~ .accordion-label::after {
-	-webkit-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
-.accordion-box input:checked ~ .accordion-content {
-	/* the menu will not show otherwise */
-	max-height: 90vh;
-}
-```
 
