@@ -13,6 +13,10 @@
 
 <!-- /MarkdownTOC -->
 
+Main refs:
+
+- [Form controls | U.S. Web Design System (USWDS)](https://designsystem.digital.gov/components/form-controls/)
+
 ## `input` Tag
 
 Basic attributes:

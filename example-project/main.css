@@ -44,7 +44,16 @@ html {
 	--theme-color-1: #CF3643;
 	--theme-color-2: #1C73BE;
 	--theme-color-3: #7C2ECB;
-	--highlight: #FEF6B1;
+    --hightlight-color-1: #F9BCBD;
+    --hightlight-color-2: #ABD8F7;
+    --gentle-shadow: 0 1px 0px rgba(17,17,26,0.05),
+                     0 0 8px rgba(17,17,26,0.1);
+    --gentle-shadow-inset: inset 0 1px 0px rgba(17,17,26,0.05),
+                           inset 0 0 8px rgba(17,17,26,0.1);
+    --strong-shadow: 0 1px 0 rgba(17,17,26,0.05),
+                     0 0 8px rgba(17,17,26,0.1),
+                     0 0 24px rgba(17,17,26,0.1),
+                     0 0 48px rgba(17,17,26,0.1);
 }
 
 html {
@@ -73,12 +82,12 @@ body {
   border: 0;
 }
 
+::selection { background: var(--hightlight-color-2); }
+
 .a11y-links {
 	align-items: center;
 	background-color:  var(--white);
-	box-shadow:0 0px 1.3px rgba(0, 0, 0, 0.184),
-				0 0px 5.1px rgba(0, 0, 0, 0.198),
-				0 0px 20px rgba(0, 0, 0, 0.2);
+	box-shadow: var(--strong-shadow);
 	margin: 10rem auto 0 0;
 	position: absolute;
 	z-index: 1000;
@@ -109,13 +118,7 @@ body {
 	background: white;
 	border-top: 5px solid transparent;
 	/* border-bottom: 3px solid var(--light-grey); */
-	box-shadow:0 0px 1px rgba(0, 0, 0, 0.02),
-				0 0px 3.5px rgba(0, 0, 0, 0.028),
-				0 0px 7.1px rgba(0, 0, 0, 0.035),
-				0 0px 11.5px rgba(0, 0, 0, 0.042),
-				0 0px 16.3px rgba(0, 0, 0, 0.05),
-				0 0px 20px rgba(0, 0, 0, 0.07)
-;
+    box-shadow: var(--gentle-shadow);
 }
 
 .top-header--fancy::before {
@@ -131,8 +134,10 @@ body {
 .top-footer {
 	text-align: center;
 	padding: 1rem;
-	font-size: 0.7em;
 	color: var(--grey);
+/*     position:absolute;
+    bottom:0;
+    width: 100%; */
 }
 
 main {
@@ -169,7 +174,7 @@ main {
 
 .abbr[title] {
 	cursor: help;
-	background: var(--highlight);
+	background: var(--hightlight-color-1);
 }
 
 .abbr--fancy[title] {
@@ -177,19 +182,81 @@ main {
 	border-bottom: 2px dotted;
 }
 
+/* accordion */
+
+.accordion { padding-left:0 !important; }
+
+.accordion__item { overflow: hidden; }
+
+.accordion__label {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1em;
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--light-grey);
+    border: 1px solid var(--white);
+}
+
+.accordion__label::after { content: "\276F"; }
+.accordion__input:checked + .accordion__label::after { transform: rotate(90deg); }
+
+.accordion__input:focus { outline: none; }
+
+.accordion__input:focus + .accordion__label {
+    outline: 3px solid var(--theme-color-1);
+    outline-offset: -3px;
+}
+
+.accordion__input {
+    position: absolute; /* hide behind label */ 
+    outline: none;
+    width: 1px;
+    height: 1px;
+    margin-left: 2px;
+    margin-top: 2px;
+    z-index: -100;
+}
+
+.accordion__input + .accordion__label:hover,
+.accordion__input:checked + .accordion__label {
+    background-color: var(--grey);
+    color: var(--white);
+}
+
+.accordion__input:checked ~ .accordion__content {
+    /* + does not work here for reasons unknown */
+    height: auto;
+    max-height: 90vh;
+}
+
+.accordion__item ul {
+    /* normalise */
+    list-style-type: disc;
+    max-height: 0;
+    padding-right: 1em;
+}
+
 /* code highlight */
 main code,
 main kbd,
 main pre,
-main samp {
+main samp,
+main kbd {
 	font-family: 'Inconsolata', monospace;
 	background: var(--light-grey);
 }
 
-main code {
+main code, main kbd {
 	/* mono fonts have smaller x-height */
 	font-size: 1.15em;
 	line-height: 1em;
+}
+
+main kbd {
+	padding-left: 0.1em;
+	padding-right: 0.1em;
+	border: 2px outset var(--light-grey);
 }
 
 main pre {
@@ -203,6 +270,7 @@ main blockquote {
 	padding: 1em;
 	page-break-inside: avoid;
 	line-height: 1.15;
+    box-shadow: var(--gentle-shadow-inset);
 }
 
 /* dark theme! */

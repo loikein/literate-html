@@ -26,3 +26,7 @@ Work in progress.
 	- [Normalize](./CSS-normalize.md)
 	- [Block Element Modifier](./CSS-BEM.md)
 - [Example project](./example-project/)
+
+## Thanks
+
+- Very opinionated tutorial, some of which I do not agree with: [HTML Best Practices—For writing maintainable and scalable HTML documents](https://hail2u.github.io/html-best-practices/index.html#dont-link-to-faviconico)

@@ -13,7 +13,6 @@
 	<a class="a11y-links__link link--fancy" href="#literate-html" tabindex="0">Skip to main content</a>
 	<a class="a11y-links__link link--fancy" tabindex="0" href="#accessibility-statement">Accessibility statement</a>
 </section>
-</section>
 
 <header class="top-header top-header--fancy">
 A fancy header
@@ -66,6 +65,55 @@ A fancy header
 <span class="nc">.regular</span> <span class="p">{</span> <span class="k">font-weight</span><span class="o">:</span> <span class="m">300</span><span class="p">;</span> <span class="p">}</span>
 <span class="nc">.bold</span> <span class="p">{</span> <span class="k">font-weight</span><span class="o">:</span> <span class="m">700</span><span class="p">;</span> <span class="p">}</span>
 </pre>
+</section>
+
+<section>
+<h2 id="accessible-accordion-menu" class="title title--underline">Accessible Pure CSS Accordion Menu<a class="headerlink" href="#accessible-accordion-menu" title="Permanent link"></a></h3>
+<p>This is a <code>checkbox</code> menu (use <kbd>tab</kbd> + <kbd>space</kbd> to navigate):</p>
+
+<ul class="accordion">
+    <li class="accordion__item">
+    <input class="accordion__input" id="to-do" type="checkbox" name="to-do-list" checked />
+    <label class="accordion__label" for="to-do">To-do list</label>
+    <ul class="accordion__content">
+        <li>Going to-do</li>
+        <li><strike>Finished to-do</strike></li>
+        <li><strike>Finished to-do</strike></li>
+    </ul>
+    </li>
+    <li class="accordion__item">
+    <input class="accordion__input" id="to-do-2" type="checkbox" name="to-do-list" />
+    <label class="accordion__label" for="to-do-2">To-do list 2</label>
+    <ul class="accordion__content">
+        <li>Going to-do</li>
+        <li>Going to-do</li>
+        <li><strike>Finished to-do</strike></li>
+    </ul>
+    </li>
+</ul>
+
+<p>This is a <code>radio</code> menu (use arrow keys to navigate):</p>
+<ul class="accordion">
+    <li class="accordion__item">
+    <input class="accordion__input" id="to-do-3" type="radio" name="to-do-3" checked />
+    <label class="accordion__label" for="to-do-3">To-do list</label>
+    <ul class="accordion__content">
+        <li>Going to-do</li>
+        <li><strike>Finished to-do</strike></li>
+        <li><strike>Finished to-do</strike></li>
+    </ul>
+    </li>
+    <li class="accordion__item">
+    <input class="accordion__input" id="to-do-4" type="radio" name="to-do-3" />
+    <label class="accordion__label" for="to-do-4">To-do list 2</label>
+    <ul class="accordion__content">
+        <li>Going to-do</li>
+        <li>Going to-do</li>
+        <li><strike>Finished to-do</strike></li>
+    </ul>
+    </li>
+</ul>
+
 </section>
 
 <section>
