@@ -224,10 +224,16 @@ main {
     color: var(--white);
 }
 
+.accordion__content {
+    visibility: collapse;
+    max-height: 0;
+    padding-right: 1em;
+}
+
 .accordion__input:checked ~ .accordion__content {
-    /* + does not work here for reasons unknown */
+    visibility: visible;
+    width: 100%;
     height: auto;
-    max-height: 90vh;
 }
 
 .accordion__item ul {
